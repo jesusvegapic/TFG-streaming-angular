@@ -1,6 +1,7 @@
 import { Component} from '@angular/core';
 import { Router } from '@angular/router';
 
+import { AuthService } from '@core/auth.service';
 import { MatDialog } from '@angular/material/dialog';
 import { SuscribeDialogComponent } from './suscribe-dialog.component';
 
@@ -12,10 +13,18 @@ export class LoginDialogComponent {
   email: string;
   password: string;
 
-  constructor(private router: Router, private dialog: MatDialog) { }
+  constructor(private auth: AuthService, private router: Router, private dialog: MatDialog) { }
 
-  login() {
-
+  login(): void {
+    this.auth.login(this.email, this.password).subscribe(
+      () => {
+        if (this.auth.untilMod()) {
+          this.router.navigate(['operator']).then().finally(() => this.dialog.closeAll());
+        } else {
+          this.dialog.closeAll();
+        }     
+      }
+    );
   }
 
   suscribe() {

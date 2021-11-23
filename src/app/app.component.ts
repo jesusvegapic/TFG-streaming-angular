@@ -1,3 +1,4 @@
+import { AuthService } from './core/auth.service';
 import { SuscribeDialogComponent } from './shared/dialogs/suscribe-dialog.component';
 import { Component, OnInit } from '@angular/core';
 import { MatDialog} from '@angular/material/dialog';
@@ -9,17 +10,22 @@ import { LoginDialogComponent } from './shared/dialogs/login-dialog.component';
   templateUrl: './app.component.html',
   styleUrls: ['./app.component.css']
 })
-export class AppComponent implements OnInit {
+export class AppComponent {
   title = 'TFG Plataforma de Streaming';
   username = undefined;
 
-  constructor(private dialog: MatDialog) {}
+  constructor(private dialog: MatDialog, private authService: AuthService) {}
 
-  ngOnInit(): void {
+  login(): void {
+    this.dialog.open(LoginDialogComponent).afterClosed().subscribe(() => this.username = this.authService.getName);
   }
 
-  login() {
-    this.dialog.open(LoginDialogComponent);
+  logout(): void {
+    this.authService.logout;
+  }
+
+  isAuthenticated(): boolean {
+    return this.authService.isAuthenticated();
   }
 
   suscribe() {
