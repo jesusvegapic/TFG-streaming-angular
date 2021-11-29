@@ -36,8 +36,8 @@
               "budgets": [
                 {
                   "type": "initial",
-                  "maximumWarning": "500kb",
-                  "maximumError": "1mb"
+                  "maximumWarning": "2mb",
+                  "maximumError": "5mb"
                 },
                 {
                   "type": "anyComponentStyle",
@@ -54,27 +54,26 @@
               "outputHashing": "all"
             },
             "development": {
-              "buildOptimizer": false,
-              "optimization": false,
-              "vendorChunk": true,
-              "extractLicenses": false,
-              "sourceMap": true,
+              "buildOptimizer": true,
+              "outputHashing": "all",
+              "optimization": true,
+              "vendorChunk": false,
+              "extractLicenses": true,
+              "sourceMap": false,
               "namedChunks": true
             }
-          },
-          "defaultConfiguration": "production"
+          }
         },
         "serve": {
           "builder": "@angular-devkit/build-angular:dev-server",
+          "options": {
+            "browserTarget": "TFG-streaming-angular:build"
+          },
           "configurations": {
             "production": {
               "browserTarget": "TFG-streaming-angular:build:production"
-            },
-            "development": {
-              "browserTarget": "TFG-streaming-angular:build:development"
             }
-          },
-          "defaultConfiguration": "development"
+          }
         },
         "extract-i18n": {
           "builder": "@angular-devkit/build-angular:extract-i18n",
@@ -102,5 +101,8 @@
       }
     }
   },
-  "defaultProject": "TFG-streaming-angular"
+  "defaultProject": "TFG-streaming-angular",
+  "cli": {
+    "analytics": false
+  }
 }
