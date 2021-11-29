@@ -21,7 +21,7 @@ export class LoginDialogComponent {
         if (this.auth.untilMod()) {
           this.router.navigate(['operator']).then().finally(() => this.dialog.closeAll());
         } else {
-          this.dialog.closeAll();
+          this.router.navigate(['home']).then().finally(() => this.dialog.closeAll());
         }     
       }
     );

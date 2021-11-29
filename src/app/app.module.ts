@@ -1,3 +1,4 @@
+import { AuthToolbarComponent } from './auth-toolbar.component';
 import { SharedModule } from '@shared/shared.module';
 import {BrowserAnimationsModule} from '@angular/platform-browser/animations';
 
@@ -7,19 +8,20 @@ import { BrowserModule } from '@angular/platform-browser';
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { CoreModule } from '@core/core.module';
-import { OperatorComponent } from './operator/operator.component';
+import { AuthComponent } from './auth.component';
 
 @NgModule({
   declarations: [
     AppComponent,
-    OperatorComponent,
+    AuthComponent,
+    AuthToolbarComponent,
   ],
   imports: [
     BrowserModule,
     BrowserAnimationsModule,
     AppRoutingModule,
     CoreModule,
-    SharedModule
+    SharedModule,
   ],
   providers: [],
   bootstrap: [AppComponent]
