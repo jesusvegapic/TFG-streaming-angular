@@ -1,6 +1,9 @@
 {
   "name": "tfg-streaming-angular",
-  "version": "0.1.0",
+  "version": "0.0.1",
+  "engines": {
+    "node": "14.x"
+  },
   "scripts": {
     "start": "node server.js",
     "build-prod": "ng build --configuration production"
