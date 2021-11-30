@@ -1,4 +1,4 @@
-const PATH_PROJECT = '/dist/TFG-streaming';
+const PATH_PROJECT = '/dist/TFG-streaming-angular';
 const express = require('express');
 const app = express();
 

@@ -1,7 +1,8 @@
-import { Role } from "src/app/core/role.model";
+import { Role } from "@core/role.model";
 
 export interface User {
     name : string;
+    email: string;
     familyName : string;
     address : string;
     city : string;

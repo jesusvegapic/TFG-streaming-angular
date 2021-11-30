@@ -2,10 +2,17 @@
 {
   "compileOnSave": false,
   "compilerOptions": {
-    "baseUrl": "./",
+    "resolveJsonModule": true,
+    "baseUrl": "src",
+    "paths": {
+      "@shared/*":["app/shared/*"],
+      "@core/*":["app/core/*"],
+      "@env": ["environments/environment"],
+    },
     "outDir": "./dist/out-tsc",
+    "allowSyntheticDefaultImports": true,
     "forceConsistentCasingInFileNames": true,
-    "strict": true,
+    "strict": false,
     "noImplicitOverride": true,
     "noPropertyAccessFromIndexSignature": true,
     "noImplicitReturns": true,

@@ -1,0 +1,70 @@
+<h3 mat-dialog-title>Suscripcion</h3>
+<mat-dialog-content>
+    <mat-form-field>
+        <input [(ngModel)]="user.email" matInput placeholder="Email" type="email" required>
+        <button (click)="user.email=undefined" *ngIf="user.email" aria-label="Clear" cdkFocusInitial mat-button mat-icon-button
+        matSuffix>
+            <mat-icon>close</mat-icon>
+        </button>
+    </mat-form-field>
+    <mat-form-field>
+        <input [(ngModel)]="user.passwd" matInput placeholder="Contraseña" type="password" required>
+        <button (click)="user.passwd=undefined" *ngIf="user.province" aria-label="Clear" cdkFocusInitial mat-button mat-icon-button
+        matSuffix>
+            <mat-icon>close</mat-icon>
+        </button>
+    </mat-form-field>
+    <mat-form-field>
+        <input [(ngModel)]="user.name" matInput placeholder="Nombre" type="text" required>
+        <button (click)="user.name=undefined" *ngIf="user.name" aria-label="Clear" cdkFocusInitial mat-button mat-icon-button
+        matSuffix>
+            <mat-icon>close</mat-icon>
+        </button>
+    </mat-form-field>
+    <mat-form-field>
+        <input [(ngModel)]="user.familyName" matInput placeholder="Apellidos" type="text" required>
+        <button (click)="user.familyName=undefined" *ngIf="user.familyName" aria-label="Clear" cdkFocusInitial mat-button mat-icon-button
+        matSuffix>
+            <mat-icon>close</mat-icon>
+        </button>
+    </mat-form-field>
+    <mat-form-field>
+        <input [(ngModel)]="user.address" matInput placeholder="Direccion" type="text" required>
+        <button (click)="user.address=undefined" *ngIf="user.address" aria-label="Clear" cdkFocusInitial mat-button mat-icon-button
+        matSuffix>
+            <mat-icon>close</mat-icon>
+        </button>
+    </mat-form-field>
+    <mat-form-field>
+        <input [(ngModel)]="user.city" matInput placeholder="Ciudad" type="text" required>
+        <button (click)="user.city=undefined" *ngIf="user.city" aria-label="Clear" cdkFocusInitial mat-button mat-icon-button
+        matSuffix>
+            <mat-icon>close</mat-icon>
+        </button>
+    </mat-form-field>
+    <mat-form-field>
+        <input [(ngModel)]="user.province" matInput placeholder="Provincia" type="text" required>
+        <button (click)="user.province=undefined" *ngIf="user.province" aria-label="Clear" cdkFocusInitial mat-button mat-icon-button
+        matSuffix>
+            <mat-icon>close</mat-icon>
+        </button>
+    </mat-form-field>
+    <mat-form-field>
+        <input [(ngModel)]="user.postalCode" matInput #input placeholder="Codigo Postal" type="text" minlength="5" maxlength="5" required>
+        <mat-hint align="end">{{input.value?.length || 0}}/5</mat-hint>
+        <button (click)="user.postalCode=undefined" *ngIf="user.postalCode" aria-label="Clear" cdkFocusInitial mat-button mat-icon-button
+        matSuffix>
+            <mat-icon>close</mat-icon>
+        </button>
+    </mat-form-field>
+    <mat-form-field>
+        <input [(ngModel)]="user.bankAccount" matInput placeholder="Cuenta bancaria" type="text" required>
+        <button (click)="user.bankAccount=undefined" *ngIf="user.province" aria-label="Clear" cdkFocusInitial mat-button mat-icon-button
+        matSuffix>
+            <mat-icon>close</mat-icon>
+        </button>
+    </mat-form-field>
+</mat-dialog-content>
+<mat-dialog-actions>
+    <button (click)="suscribe()" mat-raised-button color="primary">Suscribirse</button>
+</mat-dialog-actions>
